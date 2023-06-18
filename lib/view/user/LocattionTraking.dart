@@ -42,30 +42,32 @@ super.initState();
   Widget build(BuildContext context) {
     return Scaffold(
 
-      body: GoogleMap(
-
-        initialCameraPosition: CameraPosition(target: sourceLocation,zoom: 13.5,),
-      markers: {
-        const Marker(
-          markerId: MarkerId("source"),
-          position: sourceLocation,
+      body: Container(
+        child: GoogleMap(
+      
+          initialCameraPosition: CameraPosition(target: sourceLocation,zoom: 13.5,),
+        markers: {
+          const Marker(
+            markerId: MarkerId("source"),
+            position: sourceLocation,
+          ),
+          const Marker(
+            markerId: MarkerId("destination"),
+            position: destination,
+          ),
+        },
+          onMapCreated: (mapController) {
+            _controller.complete(mapController);
+        },
+          // polylines: {
+          //   Polyline(
+          //     polylineId: const PolylineId("route"),
+          //     points: polylineCoordinates,
+          //     color: const Color(0xFF7B61FF),
+          //     width: 6,
+          //   ),
+          // },
         ),
-        const Marker(
-          markerId: MarkerId("destination"),
-          position: destination,
-        ),
-      },
-        onMapCreated: (mapController) {
-          _controller.complete(mapController);
-      },
-        // polylines: {
-        //   Polyline(
-        //     polylineId: const PolylineId("route"),
-        //     points: polylineCoordinates,
-        //     color: const Color(0xFF7B61FF),
-        //     width: 6,
-        //   ),
-        // },
       ),
     );
   }
