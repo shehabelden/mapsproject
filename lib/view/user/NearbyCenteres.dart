@@ -34,24 +34,24 @@ class _NearbyCenteresState extends State<NearbyCenteres> {
                   zoomControlsEnabled: false,
                   myLocationEnabled: true,
                   myLocationButtonEnabled: false,
-                  markers: {
-                    const Marker(
-                      markerId: MarkerId('1'),
-                      position: LatLng(30.003758, 31.174132),
-                    ),
-                    const Marker(
-                      markerId: MarkerId('2'),
-                      position: LatLng(30.005316, 31.177890),
-                    ),
-                    const Marker(
-                      markerId: MarkerId('3'),
-                      position: LatLng(30.004582, 31.173036),
-                    ),
-                    const Marker(
-                      markerId: MarkerId('4'),
-                      position: LatLng(30.005126, 31.170913),
-                    ),
-                  },
+                  // markers: {
+                  //   const Marker(
+                  //     markerId: MarkerId('1'),
+                  //     position: LatLng(30.139259896517608, 31.66203864459031),
+                  //   ),
+                  //   const Marker(
+                  //     markerId: MarkerId('2'),
+                  //     position: LatLng(30.16765827883763, 31.61579178146941),
+                  //   ),
+                  //   const Marker(
+                  //     markerId: MarkerId('3'),
+                  //     position: LatLng(30.165322214151793, 31.6199100475472),
+                  //   ),
+                  //   const Marker(
+                  //     markerId: MarkerId('4'),
+                  //     position: LatLng(30.170582689227615, 31.621423708961487),
+                  //   ),
+                  // },
                   initialCameraPosition: CameraPosition(
                     target: currentPosition!,
                     zoom: 16.0,

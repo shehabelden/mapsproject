@@ -4,6 +4,7 @@ import 'package:http/http.dart' as http;
 import '../../../../sharedWidgets/attention/customToast.dart';
 import '../../../../sharedWidgets/loading/showAndHideLoader.dart';
 import '../../../../view/user/HomeScreen.dart';
+import '../../../../view/user/WidgetAssitance/mapPage.dart';
 import '../../auth/user/auth_login.dart';
 import '../../../models/RepotpRes.dart';
 
@@ -27,7 +28,7 @@ class Report {
       showSuccessToast('Success');
       Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
         builder: (context) {
-          return HomeScreen();
+          return MapPage();
         },
       ), (route) => false);
     } else {

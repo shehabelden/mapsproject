@@ -3,7 +3,6 @@ import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:math';
 
-
 class MapPage extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -13,13 +12,12 @@ class _HomeState extends State<MapPage> {
   GoogleMapController? mapController; //contrller for Google map
   PolylinePoints polylinePoints = PolylinePoints();
 
-  String googleAPiKey =
-      "AIzaSyCxiNGkEWmFQ2N9V_TmUq10E_bhsG44up4";
+  String googleAPiKey = "AIzaSyCxiNGkEWmFQ2N9V_TmUq10E_bhsG44up4";
 
   Set<Marker> markers = Set(); //markers for google map
   Map<PolylineId, Polyline> polylines = {}; //polylines to show direction
 
-    //// start and end location ////////////////////////
+  //// start and end location ////////////////////////
   LatLng startLocation = LatLng(30.02918, 31.203076);
   LatLng endLocation = LatLng(29.969872, 31.136131);
 
@@ -131,7 +129,25 @@ class _HomeState extends State<MapPage> {
               target: startLocation, //initial position
               zoom: 14.0, //initial zoomlevel
             ),
-            markers: markers, //markers to show on map
+            markers: {
+              const Marker(
+                markerId: MarkerId('1'),
+                position: LatLng(30.139259896517608, 31.66203864459031),
+              ),
+              const Marker(
+                markerId: MarkerId('2'),
+                position: LatLng(30.16765827883763, 31.61579178146941),
+              ),
+              const Marker(
+                markerId: MarkerId('3'),
+                position: LatLng(30.165322214151793, 31.6199100475472),
+              ),
+              const Marker(
+                markerId: MarkerId('4'),
+                position: LatLng(30.170582689227615, 31.621423708961487),
+              ),
+            },
+            //markers to show on map
             polylines: Set<Polyline>.of(polylines.values), //polylines
             mapType: MapType.normal, //map type
             onMapCreated: (controller) {
