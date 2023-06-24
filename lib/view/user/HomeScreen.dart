@@ -8,6 +8,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'WidgetAssitance/selectTheTypeOfWidget.dart';
 import 'confirmItems.dart';
 import 'history.dart';
+import 'location_service.dart';
 import 'login.dart';
 import '../Service Provider/order_details.dart';
 import 'profile_user.dart';
@@ -26,7 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    getLocation();
+    GetLocation();
     super.initState();
     servicesModel;
   }
@@ -180,22 +181,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  getLocation() async {
-    LocationPermission permission;
-    permission = await Geolocator.requestPermission();
-
-    Position position = await Geolocator.getCurrentPosition(
-        desiredAccuracy: LocationAccuracy.high);
-    double lat = position.latitude;
-    double long = position.longitude;
-
-    LatLng location = LatLng(lat, long);
-
-    setState(() {
-      currentPosition = location;
-      isLoading = false;
-    });
-  }
-
+  
 
 }

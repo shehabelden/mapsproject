@@ -19,6 +19,7 @@ class _HomeState extends State<MapPage> {
   Set<Marker> markers = Set(); //markers for google map
   Map<PolylineId, Polyline> polylines = {}; //polylines to show direction
 
+    //// start and end location ////////////////////////
   LatLng startLocation = LatLng(30.02918, 31.203076);
   LatLng endLocation = LatLng(29.969872, 31.136131);
 
@@ -118,7 +119,7 @@ class _HomeState extends State<MapPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Calculate Distance in Google Map"),
+          title: Text("Tap The Location Icon For More Options "),
           backgroundColor: Colors.deepPurpleAccent,
         ),
         body: Stack(children: [

@@ -8,11 +8,6 @@ void main() async {
   runApp(const MyApp());
 }
 
-// Stateless
-// Stateful
-// class MyApp
-// BY=> #MOHAMED_TAIMA.
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
